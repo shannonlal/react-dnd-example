@@ -181,3 +181,6 @@ canDrop() - Returns true if the drag operation in progress
 isOver(options) - Returns true if drag opeartion in progress
 
 
+TODO tomorrow
+
+https://codesandbox.io/s/github/react-dnd/react-dnd/tree/gh-pages/examples_hooks_js/02-drag-around/naive?from-embed
