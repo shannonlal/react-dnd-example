@@ -1,4 +1,5 @@
 Scenario 1. Create a Room Container (Drop Target).  Can display Table and Stand below
+Scenario 1a.  Convert the roomItems to a list
 
 Scenario 2. Add a desk to the room.  Add a room to the room
 

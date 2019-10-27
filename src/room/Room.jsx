@@ -11,8 +11,10 @@ const styles = {
 }
 const Room = ({ hideSourceOnDrag }) => {
   const [roomItems, setRoomItems] = useState({
-    a: { top: 20, left: 80, title: 'Drag me around' },
-    b: { top: 180, left: 20, title: 'Drag me too' },
+    elements: [
+      { top: 20, left: 80, title: 'Drag me around' },
+      { top: 180, left: 20, title: 'Drag me too' }
+    ]
   })
   const [, drop] = useDrop({
     accept: ItemTypes.BOX,
@@ -27,20 +29,32 @@ const Room = ({ hideSourceOnDrag }) => {
   const moveRoomItem = (id, left, top) => {
     setRoomItems(
       update(roomItems, {
-        [id]: {
+        elements: {
+          [id]: {
           $merge: { left, top },
         },
+      }
+      }),
+    )
+  }
+
+  const addRoomItem = (title) => {
+    setRoomItems(
+      update(roomItems, {
+        elements: {
+          $push: { left:0, top:0, title },
+      }
       }),
     )
   }
   return (
     <div ref={drop} style={styles}>
-      {Object.keys(roomItems).map(key => {
-        const { left, top, title } = roomItems[key]
+      {roomItems.elements.map((item, index) => {
+        const { left, top, title } = item;
         return (
           <RoomItem
-            key={key}
-            id={key}
+            key={index}
+            id={index}
             left={left}
             top={top}
             hideSourceOnDrag={hideSourceOnDrag}
