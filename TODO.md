@@ -1,9 +1,7 @@
-1. Create a Room where we can drop elements into
-2. Create Elements: Bed, Chair, Desk, Door that can be added
-3. Display an Element on the Room
-4. Allow the Element to be moved around on the board
+Scenario 1. Create a Room Container (Drop Target).  Can display Table and Stand below
 
-https://codesandbox.io/s/react-dnd-example-7-49r22
-1. Box
-2. Container.
+Scenario 2. Add a desk to the room.  Add a room to the room
 
+Scenario 3. Remove a desk from the room.  Remove the stand from the room
+
+Scenario 4. Recreate a room from JSON in memory
