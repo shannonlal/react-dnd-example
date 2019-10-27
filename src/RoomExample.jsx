@@ -5,10 +5,11 @@ export default function RoomExample() {
   //const [hideSourceOnDrag, setHideSourceOnDrag, ] = useState(true)
   const [roomDetails, setRoomDetails, ] = useState({
     hideSourceOnDrag:false,
-    rooms: {
-        a: { top: 20, left: 80, title: 'Drag me around' },
-        b: { top: 180, left: 20, title: 'Drag me too' },
-    },
+    rooms: [
+        { top: 20, left: 80, title: 'Drag me around' },
+        { top: 180, left: 20, title: 'Drag me too' },
+        { top: 90, left: 30, title: 'Third' },
+    ],
     roomsIndex:2,
   })
   const toggle = useCallback(() => setRoomDetails({hideSourceOnDrag:!roomDetails.hideSourceOnDrag}), [

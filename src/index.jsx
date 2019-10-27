@@ -1,15 +1,16 @@
 
 	import React from 'react'
 	import ReactDOM from 'react-dom'
-	import RoomExample from './RoomExample';
-	import { DndProvider } from 'react-dnd'
-	import HTML5Backend from 'react-dnd-html5-backend'
+	// import RoomExample from './RoomExample';
+	import { DndProvider } from 'react-dnd';
+	import HTML5Backend from 'react-dnd-html5-backend';
+	import SingleTargetExample from './SingleTargetExample';
 	
 	function App() {
 		return (
 			<div className="App">
 				<DndProvider backend={HTML5Backend}>
-					<RoomExample />
+					<SingleTargetExample />
 				</DndProvider>
 			</div>
 		)

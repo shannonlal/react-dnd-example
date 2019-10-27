@@ -24,8 +24,8 @@ const Room = ({ hideSourceOnDrag, rooms, moveRoom }) => {
 
   return (
     <div ref={drop} style={styles}>
-      {Object.keys(rooms).map(key => {
-        const { left, top, title } = rooms[key]
+      {rooms && rooms.map((room,key) => {
+        const { left, top, title } = room;
         return (
           <RoomItem
             key={key}
