@@ -2,7 +2,7 @@ import React from 'react'
 import { useDrop } from 'react-dnd'
 import ItemTypes from './ItemTypes'
 
-import RoomItem from './RoomItem'
+import RoomItem from './room/RoomItem'
 const styles = {
   width: 300,
   height: 300,
