@@ -10,7 +10,7 @@ const styles = {
   position: 'relative',
 }
 const Room = ({ hideSourceOnDrag }) => {
-  const [roomsItems, setRoomsItems] = useState({
+  const [roomItems, setRoomItems] = useState({
     a: { top: 20, left: 80, title: 'Drag me around' },
     b: { top: 180, left: 20, title: 'Drag me too' },
   })
@@ -25,7 +25,7 @@ const Room = ({ hideSourceOnDrag }) => {
     },
   })
   const moveRoomItem = (id, left, top) => {
-    setRoomsItems(
+    setRoomItems(
       update(roomItems, {
         [id]: {
           $merge: { left, top },
@@ -35,7 +35,7 @@ const Room = ({ hideSourceOnDrag }) => {
   }
   return (
     <div ref={drop} style={styles}>
-      {Object.keys(roomsItems).map(key => {
+      {Object.keys(roomItems).map(key => {
         const { left, top, title } = roomItems[key]
         return (
           <RoomItem
