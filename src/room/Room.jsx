@@ -1,21 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDrop } from 'react-dnd'
 import ItemTypes from './ItemTypes'
 import RoomItem from './RoomItem'
-import update from 'immutability-helper'
 const styles = {
   width: 300,
   height: 300,
   border: '1px solid black',
   position: 'relative',
 }
-const Room = ({ hideSourceOnDrag }) => {
-  const [roomItems, setRoomItems] = useState({
-    elements: [
-      { top: 20, left: 80, title: 'Drag me around' },
-      { top: 180, left: 20, title: 'Drag me too' }
-    ]
-  })
+const Room = ({ hideSourceOnDrag, roomItems, moveRoomItem, addRoomItem }) => {
+
   const [, drop] = useDrop({
     accept: ItemTypes.BOX,
     drop(item, monitor) {
@@ -26,27 +20,9 @@ const Room = ({ hideSourceOnDrag }) => {
       return undefined
     },
   })
-  const moveRoomItem = (id, left, top) => {
-    setRoomItems(
-      update(roomItems, {
-        elements: {
-          [id]: {
-          $merge: { left, top },
-        },
-      }
-      }),
-    )
-  }
 
-  const addRoomItem = (title) => {
-    setRoomItems(
-      update(roomItems, {
-        elements: {
-          $push: { left:0, top:0, title },
-      }
-      }),
-    )
-  }
+  console.log( 'RoomtItems', roomItems);
+  console.log( 'Hide Source', hideSourceOnDrag);
   return (
     <div ref={drop} style={styles}>
       {roomItems.elements.map((item, index) => {
