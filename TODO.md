@@ -1,7 +1,7 @@
 Scenario 1. Create a Room Container (Drop Target).  Can display Table and Stand below
 Scenario 1a.  Convert the roomItems to a list - Done
 Scenario 1b.  Move state outside of Room to parent component. - Done
-Scenario 1c. Add Item to reoom
+Scenario 1c. Add Item to reoom - Done
 Scenario 1d. Remove item from room
 
 Scenario 2. Add a desk to the room.  Add a room to the room

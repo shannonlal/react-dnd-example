@@ -1,6 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import Room from './room/Room';
-import update from 'immutability-helper'
+import update from 'immutability-helper';
+
+import Select from 'react-select';
+
 export default function DragAroundNaive() {
 
   const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true)
@@ -10,6 +13,7 @@ export default function DragAroundNaive() {
       { top: 180, left: 20, title: 'Drag me too' }
     ]
   })
+  const ids = roomDetails.elements.map( (elem,i) => {return {'label':elem.title, 'value' : i}});
   const toggle = useCallback(() => {
     console.log( 'Toggling field');
     setHideSourceOnDrag(!hideSourceOnDrag)
@@ -37,6 +41,16 @@ export default function DragAroundNaive() {
       }),
     )
   }
+  const removeRoomItem = (elem) =>{
+    console.log( 'Remove rooom called',elem);
+    setRoomDetails(
+      update(roomDetails, {
+        elements: {
+          $splice: [[elem.value, 1]],
+      }
+      }),
+    )
+  }
 
   console.log( 'Room Details', roomDetails);
   return (
@@ -54,6 +68,7 @@ export default function DragAroundNaive() {
         </label>
       </p>
       <button onClick={addRoomItem}>Add Room</button>
+      <Select options={ids} onChange={removeRoomItem} autoFocus={true}/>
     </div>
   )
 }
