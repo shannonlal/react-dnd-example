@@ -16,6 +16,7 @@ export default function DragAroundNaive() {
   });
 
   const moveRoomItem = (id, left, top) => {
+    console.log('Moving Room', id);
     setRoomDetails(
       update(roomDetails, {
         elements: {
@@ -27,11 +28,11 @@ export default function DragAroundNaive() {
     )
   }
 
-  const addRoomItem = (title) => {
+  const addRoomItem = () => {
     setRoomDetails(
       update(roomDetails, {
         elements: {
-          $push: { left:0, top:0, title },
+          $push: [{ left:0, top:0, title:'New Room' }],
       }
       }),
     )
@@ -52,6 +53,7 @@ export default function DragAroundNaive() {
           <small>Hide the source item while dragging</small>
         </label>
       </p>
+      <button onClick={addRoomItem}>Add Room</button>
     </div>
   )
 }
