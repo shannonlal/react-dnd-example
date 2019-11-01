@@ -184,3 +184,8 @@ isOver(options) - Returns true if drag opeartion in progress
 TODO tomorrow
 
 https://codesandbox.io/s/github/react-dnd/react-dnd/tree/gh-pages/examples_hooks_js/02-drag-around/naive?from-embed
+
+
+Nested Drag:
+1. You can nest the drag sources within each other if canDrag - false.  It will keep going up the partent until if find ones that returns true.  Only activated drag source will have its activated beginDrag() and endDrag() called.
+

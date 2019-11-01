@@ -4,7 +4,11 @@ Scenario 1b.  Move state outside of Room to parent component. - Done
 Scenario 1c. Add Item to reoom - Done
 Scenario 1d. Remove item from room - Done
 
+Scenario 2: Drop Elements into Target
+Scenario 2a.  
+
 Scenario 2. 
+Nested:
 2a. Add a stand to the desk.  
 2b. Enforce adding a stand to the desk
 2c. Move the desk and its components around

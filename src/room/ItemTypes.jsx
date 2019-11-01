@@ -3,6 +3,7 @@ export default {
     DESK: 'desk',
     CHAIR: 'chair',
     BED: 'bed',
-    DOOR: 'door'
+    DOOR: 'door',
+    BOX_ADD: 'box_add'
   }
   

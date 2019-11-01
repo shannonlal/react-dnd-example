@@ -11,13 +11,33 @@ const styles = {
 const Room = ({ hideSourceOnDrag, roomItems, moveRoomItem, addRoomItem }) => {
 
   const [, drop] = useDrop({
-    accept: ItemTypes.BOX,
+    accept: [ItemTypes.BOX, ItemTypes.BOX_ADD],
     drop(item, monitor) {
-      const delta = monitor.getDifferenceFromInitialOffset()
-      const left = Math.round(item.left + delta.x)
-      const top = Math.round(item.top + delta.y)
-      moveRoomItem(item.id, left, top)
-      return undefined
+
+      if( item.type === ItemTypes.BOX_ADD){
+        console.log( 'monitor', monitor);
+        //const delta = monitor.getDifferenceFromInitialOffset()
+        ///const left = Math.round( delta.x)
+        //const top = Math.round( delta.y)
+
+        //console.log( `ADD left ${left} top ${top}`);
+
+        //const off = monitor.getInitialClientOffset();
+        //console.log('off',off);
+        //console.log( 'result', monitor.getDropResult());
+        const location = monitor.getClientOffset();
+        console.log( 'cleint off', monitor.getClientOffset());
+        //console.log( 'source', monitor.getSourceClientOffset());
+        addRoomItem(location.x, location.y);
+      }else{
+        console.log( 'item', item);
+        const delta = monitor.getDifferenceFromInitialOffset()
+        const left = Math.round(item.left + delta.x)
+        const top = Math.round(item.top + delta.y)
+        moveRoomItem(item.id, left, top)
+        return undefined
+      }
+
     },
   })
 

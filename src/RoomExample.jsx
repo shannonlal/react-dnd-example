@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import Room from './room/Room';
 import update from 'immutability-helper';
+import AddBox from './room/AddBox';
 
 import Select from 'react-select';
 
@@ -32,11 +33,11 @@ export default function DragAroundNaive() {
     )
   }
 
-  const addRoomItem = () => {
+  const addRoomItem = (left=0, top=0) => {
     setRoomDetails(
       update(roomDetails, {
         elements: {
-          $push: [{ left:0, top:0, title:'New Room' }],
+          $push: [{ left, top, title:'New Room' }],
       }
       }),
     )
@@ -55,7 +56,8 @@ export default function DragAroundNaive() {
   console.log( 'Room Details', roomDetails);
   return (
     <div>
-      <Room hideSourceOnDrag={hideSourceOnDrag} roomItems={roomDetails} moveRoomItem={moveRoomItem} addRoomItem={addRoomItem} />
+      <Room hideSourceOnDrag={hideSourceOnDrag} roomItems={roomDetails} 
+                  moveRoomItem={moveRoomItem} addRoomItem={addRoomItem} />
       <p>
         <label htmlFor="hideSourceOnDrag">
           <input
@@ -67,6 +69,9 @@ export default function DragAroundNaive() {
           <small>Hide the source item while dragging</small>
         </label>
       </p>
+      <div>
+        <AddBox name="Add" />
+      </div>
       <button onClick={addRoomItem}>Add Room</button>
       <Select options={ids} onChange={removeRoomItem} autoFocus={true}/>
     </div>
