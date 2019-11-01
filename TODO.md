@@ -5,7 +5,9 @@ Scenario 1c. Add Item to reoom - Done
 Scenario 1d. Remove item from room - Done
 
 Scenario 2: Drop Elements into Target
-Scenario 2a.  
+Scenario 2a.  Add Item from a box onto the page
+Scenario 2b. Link up multiple rooms and drag from one button
+Scenario 2c. Hot tip delete item on box.
 
 Scenario 2. 
 Nested:
