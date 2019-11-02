@@ -5,21 +5,19 @@ Scenario 1c. Add Item to reoom - Done
 Scenario 1d. Remove item from room - Done
 
 Scenario 2: Drop Elements into Target
-Scenario 2a.  Add Item from a box onto the page - Done
-Scenario 2b. Start with empty room and add elements to it
-Scenario 2c. Link up multiple rooms and drag from one button
-Scenario 2d. Hot tip delete item on box.
+Scenario 2a. Add Item from a box onto the page - Done
+Scenario 2b. Start with empty room and add elements to it - Done
+Scenario 2c. Link up multiple rooms and drag from one button - Done
+Scenario 2d. Fix why adding to second room not working
+Scenario 2e. Hot tip delete item on box.
+Scenario 2f. Resizing The room on the page
+Scenario 2g. Dimensions of the item
 
-Scenario 2. 
-Nested:
-2a. Add a stand to the desk.  
-2b. Enforce adding a stand to the desk
-2c. Move the desk and its components around
-2d. Remove a desk from the standAdd a room to the room
-
-Scenario 3. Add multiple rooms
+Scenario 3. Zoom and Pan
 
 Scenario 4. Recreate a room from JSON in memory
+
+Scenario 5. Graph Data Structure
 
 
 Scenario 1:

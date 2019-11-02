@@ -189,3 +189,28 @@ https://codesandbox.io/s/github/react-dnd/react-dnd/tree/gh-pages/examples_hooks
 Nested Drag:
 1. You can nest the drag sources within each other if canDrag - false.  It will keep going up the partent until if find ones that returns true.  Only activated drag source will have its activated beginDrag() and endDrag() called.
 
+What is needed.
+1) Square Table with x positions
+2) Rectangular Tables with x positions
+3) Circular Tables with x positions
+4) Door - Fixed Items
+5) Windows - Fixed Items
+6) Chairs - Fixed Items
+
+Attributes of Fixed Items:
+1. Can be added
+2. Can be moved around the room
+3. Can be removed from the room
+4. Can be repopulated from the memory (JSON)
+
+Dynamic Items:
+1. V1 - Support one room
+2. Added to the Room
+3. Removed from the Room
+4. Can be moved around the room
+5. Can receive State Changes to items.
+6. Can be repopulated from memory (JSON)
+
+Data Structure
+1. Support for Graph Data structure
+2. Given Attributes.  Find all elements and notify

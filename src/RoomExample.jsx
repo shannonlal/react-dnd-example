@@ -13,35 +13,55 @@ export default function DragAroundNaive() {
    */
   const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true)
   const [roomDetails, setRoomDetails] = useState({
-    elements: [
+    rooms: [{
+      name:'Room 1',
+      elements: [
       
+      ]
+    },
+    {
+      name:'Room 2',
+      elements: [
+      
+      ]
+    }
     ]
+
   })
-  const ids = roomDetails.elements.map( (elem,i) => {return {'label':elem.title, 'value' : i}});
+  //const ids = roomDetails.elements.map( (elem,i) => {return {'label':elem.title, 'value' : i}});
   const toggle = useCallback(() => {
     console.log( 'Toggling field');
     setHideSourceOnDrag(!hideSourceOnDrag)
   });
 
-  const moveRoomItem = (id, left, top) => {
-    console.log('Moving Room', id);
+  const moveRoomItem = (roomId, id, left, top) => {
+    console.log(`Moving Room ${roomId} Element ${id} Left ${left} top ${top}`);
     setRoomDetails(
       update(roomDetails, {
-        elements: {
-          [id]: {
-          $merge: { left, top },
-        },
+        rooms: {
+          [roomId]: {
+            elements: {
+              [id]: {
+              $merge: { left, top },
+            },
+          }
+        }
       }
       }),
     )
   }
 
-  const addRoomItem = (left=0, top=0) => {
+  const addRoomItem = (roomId, left=0, top=0) => {
+    console.log( `Adding Item to Room ${roomId} Left ${left} Top ${top}`);
     setRoomDetails(
       update(roomDetails, {
-        elements: {
-          $push: [{ left, top, title:'New Room' }],
-      }
+        rooms: {
+          [roomId]: {
+            elements: {
+              $push: [{ left, top, title:'New Room' }],
+            }
+          }
+        }
       }),
     )
   }
@@ -59,8 +79,16 @@ export default function DragAroundNaive() {
   console.log( 'Room Details', roomDetails);
   return (
     <div>
-      <Room hideSourceOnDrag={hideSourceOnDrag} roomItems={roomDetails} 
-                  moveRoomItem={moveRoomItem} addRoomItem={addRoomItem} />
+      {
+        roomDetails.rooms.map((room, index)=>{
+          console.log( 'Room Being Rendered ', room);
+          return(<Room key={index} name={room.roomName} roomId={index}
+                      height={300} width={300}
+                      roomItems={room.elements} moveRoomItem={moveRoomItem} 
+                      addRoomItem={addRoomItem} hideSourceOnDrag={hideSourceOnDrag}/>)
+        })
+      }
+
       <p>
         <label htmlFor="hideSourceOnDrag">
           <input
@@ -76,7 +104,7 @@ export default function DragAroundNaive() {
         <AddBox name="Add" />
       </div>
       <button onClick={addRoomItem}>Add Room</button>
-      <Select options={ids} onChange={removeRoomItem} autoFocus={true}/>
+      {/*<Select options={ids} onChange={removeRoomItem} autoFocus={true}/>*/}
     </div>
   )
 }
