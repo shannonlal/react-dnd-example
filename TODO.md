@@ -12,6 +12,7 @@ Scenario 2d. Fix why adding to second room not working
 Scenario 2e. Hot tip delete item on box.
 Scenario 2f. Resizing The room on the page
 Scenario 2g. Dimensions of the item
+Scenario 2h. Make sure adding item fits within area
 
 Scenario 3. Zoom and Pan
 
