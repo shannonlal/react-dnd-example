@@ -7,11 +7,14 @@ import Select from 'react-select';
 
 export default function DragAroundNaive() {
 
+  /**
+   * { top: 20, left: 80, title: 'Drag me around' },
+      { top: 180, left: 20, title: 'Drag me too' }
+   */
   const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true)
   const [roomDetails, setRoomDetails] = useState({
     elements: [
-      { top: 20, left: 80, title: 'Drag me around' },
-      { top: 180, left: 20, title: 'Drag me too' }
+      
     ]
   })
   const ids = roomDetails.elements.map( (elem,i) => {return {'label':elem.title, 'value' : i}});
