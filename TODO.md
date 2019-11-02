@@ -6,8 +6,9 @@ Scenario 1d. Remove item from room - Done
 
 Scenario 2: Drop Elements into Target
 Scenario 2a.  Add Item from a box onto the page - Done
-Scenario 2b. Link up multiple rooms and drag from one button
-Scenario 2c. Hot tip delete item on box.
+Scenario 2b. Start with empty room and add elements to it
+Scenario 2c. Link up multiple rooms and drag from one button
+Scenario 2d. Hot tip delete item on box.
 
 Scenario 2. 
 Nested:
