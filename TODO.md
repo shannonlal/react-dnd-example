@@ -14,11 +14,15 @@ Scenario 2f. Resizing The room on the page
 Scenario 2g. Dimensions of the item - todo
 Scenario 2h. Make sure adding item fits within area - todo
 
-Scenario 3. Zoom and Pan
+Scenario 3. Resize items to actual dimensions
 
-Scenario 4. Recreate a room from JSON in memory
+Scenario 4. Zoom and Pan
 
-Scenario 5. Graph Data Structure
+Scenario 5. Recreate a room from JSON in memory
+
+Scenario 6. Graph Data Structure
+
+
 
 
 Scenario 1:
