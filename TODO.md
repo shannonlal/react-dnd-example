@@ -9,7 +9,7 @@ Scenario 2a. Add Item from a box onto the page - Done
 Scenario 2b. Start with empty room and add elements to it - Done
 Scenario 2c. Link up multiple rooms and drag from one button - Done
 Scenario 2d. Fix why adding to second room not working - Hold
-Scenario 2e. Hot tip delete item on box.
+Scenario 2e. Hot tip delete item on box. - Delete
 Scenario 2f. Resizing The room on the page
 Scenario 2g. Dimensions of the item - todo
 Scenario 2h. Make sure adding item fits within area - todo
