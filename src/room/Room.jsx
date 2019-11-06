@@ -5,7 +5,7 @@ import RoomItem from './RoomItem'
 
 const Room = ({ roomName, roomId, hideSourceOnDrag, 
                 roomItems, moveRoomItem, addRoomItem,
-              width, height }) => {
+              width, height, removeRoomItem }) => {
 
   const styles = {
     width,
@@ -40,11 +40,13 @@ const Room = ({ roomName, roomId, hideSourceOnDrag,
         const { left, top, title } = item;
         return (
           <RoomItem
+            roomId={roomId}
             key={index}
             id={index}
             left={left}
             top={top}
             hideSourceOnDrag={hideSourceOnDrag}
+            removeRoomItem={removeRoomItem}
           >
             {title}
           </RoomItem>

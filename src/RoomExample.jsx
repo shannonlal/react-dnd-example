@@ -65,13 +65,18 @@ export default function DragAroundNaive() {
       }),
     )
   }
-  const removeRoomItem = (elem) =>{
-    console.log( 'Remove rooom called',elem);
+  const removeRoomItem = (roomId, itemId) =>{
+    console.log( `Remove rooom called room ${roomId} id ${itemId}`);
+
     setRoomDetails(
       update(roomDetails, {
-        elements: {
-          $splice: [[elem.value, 1]],
-      }
+        rooms: {
+          [roomId]: {
+            elements: {
+              $splice: [[itemId, 1]],
+            }
+          }
+        }
       }),
     )
   }
@@ -85,7 +90,8 @@ export default function DragAroundNaive() {
           return(<Room key={index} name={room.roomName} roomId={index}
                       height={300} width={300}
                       roomItems={room.elements} moveRoomItem={moveRoomItem} 
-                      addRoomItem={addRoomItem} hideSourceOnDrag={hideSourceOnDrag}/>)
+                      addRoomItem={addRoomItem} hideSourceOnDrag={hideSourceOnDrag}
+                      removeRoomItem={removeRoomItem}/>)
         })
       }
 
