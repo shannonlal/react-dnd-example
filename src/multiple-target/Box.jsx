@@ -8,6 +8,7 @@ const style = {
   marginBottom: '1.5rem',
   cursor: 'move',
   float: 'left',
+  width: 20
 }
 const Box = ({ name, type, isDropped }) => {
   const [{ opacity }, drag] = useDrag({

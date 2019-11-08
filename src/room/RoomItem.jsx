@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { useDrag } from "react-dnd";
 import ItemTypes from "./ItemTypes";
-const style = {
-  position: "absolute",
-  border: "1px dashed gray",
-  backgroundColor: "white",
-  padding: "0.5rem 1rem",
-  cursor: "move"
-};
-const RoomItem = ({ roomId, id, left, top, hideSourceOnDrag,removeRoomItem, children }) => {
+export const ITEM_DIMENSIONS = {width:50, height:50};
+const RoomItem = ({ roomId, id, left, top,
+                  hideSourceOnDrag,removeRoomItem, children }) => {
+  const style = {
+    position: "absolute",
+    border: "1px dashed gray",
+    backgroundColor: "white",
+    /*padding: "0.5rem 1rem",
+    cursor: "move",*/
+    width: ITEM_DIMENSIONS.width,
+    height: ITEM_DIMENSIONS.height,
+  };
   //console.log(`ID ${id} Left ${left} Top ${top}`);
   const [showMenu, setShowMenu] = useState(false);
   const [{ isDragging }, drag] = useDrag({
@@ -37,7 +41,7 @@ const RoomItem = ({ roomId, id, left, top, hideSourceOnDrag,removeRoomItem, chil
     setShowMenu(false);
   }
   return (
-    <div ref={drag} style={{ ...style, left, top }} onClick={displayMenu} >
+    <div ref={drag} style={{...style, left, top }} onClick={displayMenu} >
       {children}
       {
         showMenu ? (
