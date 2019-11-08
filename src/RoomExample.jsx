@@ -4,6 +4,7 @@ import update from 'immutability-helper';
 import AddBox from './room/AddBox';
 
 import Select from 'react-select';
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 export default function DragAroundNaive() {
 
@@ -84,6 +85,12 @@ export default function DragAroundNaive() {
   console.log( 'Room Details', roomDetails);
   return (
     <div>
+      <TransformWrapper defaultScale={1} defaultPositionX={200} defaultPositionY={100}>
+
+      {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+        <React.Fragment>
+          <TransformComponent>
+            <div>
       {
         roomDetails.rooms.map((room, index)=>{
           console.log( 'Room Being Rendered ', room);
@@ -108,9 +115,19 @@ export default function DragAroundNaive() {
       </p>
       <div>
         <AddBox name="Add" />
+        <div className="tools">
+              <button onClick={zoomIn}>+</button>
+              <button onClick={zoomOut}>-</button>
+              <button onClick={resetTransform}>x</button>
+            </div>
       </div>
       <button onClick={addRoomItem}>Add Room</button>
       {/*<Select options={ids} onChange={removeRoomItem} autoFocus={true}/>*/}
+      </div>
+      </TransformComponent>
+      </React.Fragment>
+      )}
+      </TransformWrapper>
     </div>
   )
 }

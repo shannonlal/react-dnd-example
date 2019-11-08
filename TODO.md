@@ -11,6 +11,12 @@ Scenario 2c. Link up multiple rooms and drag from one button - Done
 Scenario 2d. Fix why adding to second room not working - Hold
 Scenario 2e. Hot tip delete item on box. - Delete
 
+Scenario 3. Zoom and Pan
+
+Scenario 4. Recreate a room from JSON in memory
+
+Initial Prototype?
+
 Scenario 3. Adding elements into Room based on size
 
 Scenario 3a. Update Add Box drag to only drag when item is within the area fully
@@ -18,9 +24,9 @@ Scenario 2h. Make sure adding item fits within area - todo
 
 Scenario 3. Resize items to actual dimensions
 
-Scenario 4. Zoom and Pan
 
-Scenario 5. Recreate a room from JSON in memory
+
+
 
 Scenario 6. Graph Data Structure
 
