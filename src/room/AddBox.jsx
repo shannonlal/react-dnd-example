@@ -11,6 +11,8 @@ const style = {
   float: 'left',
 };
 
+//TODO need to put in logic here as to when they can drop.
+
 const AddBox = ({ name }) => {
   const [{ isDragging }, drag] = useDrag({
     item: { name, type: ItemTypes.BOX_ADD },
