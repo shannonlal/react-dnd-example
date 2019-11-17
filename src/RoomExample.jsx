@@ -85,12 +85,12 @@ export default function DragAroundNaive() {
   console.log( 'Room Details', roomDetails);
   return (
     <div>
-      <TransformWrapper defaultScale={1} defaultPositionX={200} defaultPositionY={100}>
+     {/* } <TransformWrapper defaultScale={1} defaultPositionX={200} defaultPositionY={100}>
 
       {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
         <React.Fragment>
           <TransformComponent>
-            <div>
+      <div> */}
       {
         roomDetails.rooms.map((room, index)=>{
           console.log( 'Room Being Rendered ', room);
@@ -115,19 +115,19 @@ export default function DragAroundNaive() {
       </p>
       <div>
         <AddBox name="Add" />
-        <div className="tools">
+       {/*} <div className="tools">
               <button onClick={zoomIn}>+</button>
               <button onClick={zoomOut}>-</button>
               <button onClick={resetTransform}>x</button>
             </div>
-      </div>
+    </div>*/}
       <button onClick={addRoomItem}>Add Room</button>
       {/*<Select options={ids} onChange={removeRoomItem} autoFocus={true}/>*/}
       </div>
-      </TransformComponent>
+      {/*</TransformComponent>
       </React.Fragment>
       )}
-      </TransformWrapper>
+      </TransformWrapper>*/}
     </div>
   )
 }
